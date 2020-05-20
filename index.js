@@ -7,7 +7,7 @@ const deepmerge = require('deepmerge');
  * Add support for updating environment variables with actions secrets
  *
  */
-console.log(process.cwd())
+core.debug(process.cwd())
 
 try {
     const gaeConfigPath = core.getInput('gae_config_path') || './app.yaml';
