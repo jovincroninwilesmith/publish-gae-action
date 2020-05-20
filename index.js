@@ -7,6 +7,8 @@ const deepmerge = require('deepmerge');
  * Add support for updating environment variables with actions secrets
  *
  */
+console.log(process.cwd())
+
 try {
     const gaeConfigPath = core.getInput('gae_config_path') || './app.yaml';
     const fileContents = fs.readFileSync(gaeConfigPath, 'utf8');
@@ -30,7 +32,7 @@ try {
     const service_account_key = core.getInput('service_account_key');
     const buf = Buffer.from(service_account_key, 'base64');
 
-    fs.writeFile('./client-secret.json', buf.toString(), function (err) {
+    fs.writeFile('./client-secret.json', buf.toString(), function(err) {
         if (err) {
             console.error(err);
         } else {
