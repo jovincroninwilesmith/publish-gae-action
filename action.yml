@@ -17,6 +17,10 @@ inputs:
   gae_variables:
     description: 'GAE variables to be written to the app.yaml file'
     required: false
+  
+  gae_config_path:
+    description: 'GAE path for where the app.yaml is'
+    required: false
 
 runs:
   using: 'node12'
